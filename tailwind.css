@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Kanit:wght@700&family=Poppins:wght@600&family=Roboto:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-bg: #ffffff;
+    --header-border: rgba(0, 102, 255, 0.2);
+    --header-text: #1a1b1e;
+    --header-text-active: #0066ff;
+    --body-bg: #f8fafc;
+    --body-text: #1a1b1e;
+    --card-bg-from: #ffffff;
+    --card-bg-via: rgba(0, 102, 255, 0.05);
+    --card-bg-to: rgba(255, 255, 255, 0.9);
+    --popup-bg: #ffffff;
+    --input-bg: transparent;
+    --input-text: #1a1b1e;
+    --input-placeholder: rgba(26, 27, 30, 0.5);
+  }
+
+  :root[class~="dark"] {
+    --header-bg: #000000;
+    --header-border: rgba(0, 102, 255, 0.4);
+    --header-text: #B1FDF9;
+    --header-text-active: #36AEF2;
+    --body-bg: #000000;
+    --body-text: #E2EBFB;
+    --card-bg-from: #000814;
+    --card-bg-via: rgba(0, 102, 255, 0.2);
+    --card-bg-to: rgba(0, 8, 20, 0.3698);
+    --popup-bg: #1A1B1E;
+    --input-bg: transparent;
+    --input-text: #E2EBFB;
+    --input-placeholder: rgba(226, 235, 251, 0.5);
+  }
+
+  body {
+    @apply bg-[var(--body-bg)] text-[var(--body-text)];
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, var(--header-text-active) 0%, var(--header-text) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .swap-box-gradient {
+    background: linear-gradient(26.72deg, var(--card-bg-from) -183.2%, var(--card-bg-via) -40.57%, var(--card-bg-to) 94.4%);
+    transform: rotate(-180deg);
+  }
+}
